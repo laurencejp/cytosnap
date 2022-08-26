@@ -226,6 +226,10 @@ proto.shot = function( opts, next ){
 
           return posns;
         });
+      case 'cyjson':
+        return page.evaluate(function(){
+          return cy.json();
+        })
       default:
         throw new Error('Invalid resolve type specified: ' + opts.resolvesTo);
     }
